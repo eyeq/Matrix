@@ -96,9 +96,6 @@ Matrix::~Matrix() {
 	if (Values()) {
 		delete[] Values();
 	}
-	if (commaInput) {
-		delete commaInput;
-	}
 }
 
 #pragma endregion
@@ -286,8 +283,7 @@ Matrix Matrix::Inverse() const {
 			}
 		}
 	}
-	delete &e;
-	return m;
+	return e;
 }
 
 void Matrix::SwapRow(int a, int b) {
